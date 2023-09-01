@@ -22,7 +22,7 @@ import { RouterLink } from "vue-router";
         Meals by Letter
       </RouterLink>
       <RouterLink
-        :to="{ name: 'byIngredients' }"
+        :to="{ name: 'ingredients' }"
         class="inline-flex items-center px-2 h-full transition-colors hover:bg-purple-100"
       >
         Meals by Ingredient

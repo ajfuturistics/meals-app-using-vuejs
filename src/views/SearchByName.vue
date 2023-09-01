@@ -31,7 +31,8 @@ onMounted(() => {
     />
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-5 p-8">
+  <div v-if="!meals?.length" class="text-center">No meals found</div>
+  <div v-else class="grid grid-cols-1 md:grid-cols-3 gap-5 p-8">
     <MealItem v-for="meal in meals" :key="meal.idMeal" :meal="meal" />
   </div>
 </template>

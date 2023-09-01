@@ -5,6 +5,7 @@ import SearchByLetter from "../views/SearchByLetter.vue";
 import SearchByName from "../views/SearchByName.vue";
 import SearchByIngredient from "../views/SearchByIngredient.vue";
 import MealDetails from "../views/MealDetails.vue";
+import Ingredients from "../views/Ingredients.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -27,6 +28,11 @@ const router = createRouter({
           path: "/by-letter/:letter?",
           name: "byLetter",
           component: SearchByLetter,
+        },
+        {
+          path: "/ingredients",
+          name: "ingredients",
+          component: Ingredients,
         },
         {
           path: "/by-ingredients/:ingredient?",

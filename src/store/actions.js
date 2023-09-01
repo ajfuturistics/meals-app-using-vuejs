@@ -10,8 +10,8 @@ export function searchMealsByLetter({ commit }, letter) {
     commit("setMealsByLetter", data.meals);
   });
 }
-export function searchMealsByCategory({ commit }, category) {
-  axiosClient.get(`/filter.php?c=${category}`).then(({ data }) => {
+export function searchMealsByIngredient({ commit }, ingredient) {
+  axiosClient.get(`/filter.php?c=${ingredient}`).then(({ data }) => {
     commit("setMealsByIngredient", data.meals);
   });
 }

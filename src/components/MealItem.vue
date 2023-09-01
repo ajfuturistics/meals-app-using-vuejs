@@ -18,6 +18,7 @@ const props = defineProps({
         :src="props.meal.strMealThumb"
         :alt="props.meal.strMeal"
         class="rounded-t-xl w-full h-48 object-cover"
+        loading="lazy"
       />
     </RouterLink>
     <div class="p-3">
