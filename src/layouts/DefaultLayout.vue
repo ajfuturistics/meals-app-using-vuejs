@@ -6,7 +6,7 @@ import Header from "../components/Header.vue";
 <template>
   <div class="bg-gray-100 min-h-screen">
     <Header />
-    <main>
+    <main class="max-w-[1200px] mx-auto">
       <RouterView />
     </main>
   </div>

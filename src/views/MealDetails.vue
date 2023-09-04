@@ -15,7 +15,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-full max-w-[800px] mx-auto pb-4">
+  <div class="w-full max-w-[800px] mx-auto p-8 pb-4">
     <h2 class="text-5xl font-bold mb-5">{{ meal.strMeal }}</h2>
     <img
       :src="meal.strMealThumb"

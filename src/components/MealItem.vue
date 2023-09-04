@@ -1,4 +1,5 @@
 <script setup>
+import { truncateWords } from "../utils";
 import Button from "./Button.vue";
 
 const props = defineProps({
@@ -25,13 +26,12 @@ const props = defineProps({
       <h3 class="font-semibold">{{ props.meal.strMeal }}</h3>
 
       <p class="mb-4">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ex
-        laboriosam modi ducimus voluptates
+        {{ truncateWords(props.meal.strInstructions, 20) }}
       </p>
 
       <div class="flex justify-between items-center">
         <Button
-          :href="props.meal.strYoutube"
+          :href="props?.meal?.strYoutube || ''"
           class="bg-red-500 hover:bg-red-600 text-white"
         >
           YouTube

@@ -2,7 +2,7 @@
 import { computed, watch, onMounted } from "vue";
 import store from "../store";
 import { useRoute } from "vue-router";
-import MealItem from "../components/MealItem.vue";
+import MealList from "../components/MealList.vue";
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
 const route = useRoute();
@@ -19,9 +19,11 @@ onMounted(() => {
 
 <template>
   <div class="p-8">
-    <div class="flex justify-center gap-2 mt-2">
+    <h1 class="text-4xl text-center font-bold mb-6">Search Meals By Letter</h1>
+    <div class="flex flex-wrap justify-center gap-2 mt-2 mb-6">
       <RouterLink
         v-for="letter in letters"
+        class="hover:scale-125 hover:font-medium transition-transform hover:text-purple-500"
         :key="letter"
         :to="{ name: 'byLetter', params: { letter } }"
       >
@@ -29,10 +31,7 @@ onMounted(() => {
       </RouterLink>
     </div>
 
-    <div v-if="!meals?.length" class="text-center">No meals found</div>
-    <div v-else class="grid grid-cols-1 md:grid-cols-3 gap-5 p-8">
-      <MealItem v-for="meal in meals" :key="meal.idMeal" :meal="meal" />
-    </div>
+    <MealList :meals="meals" />
   </div>
 </template>
 
